@@ -82,6 +82,29 @@ for (int i = 1; i <= n; i++)
     Console.WriteLine($"{i} → {i * i * i}");
 //Вариант 6
 for (int i = 1; i <= 30; i++) {
-    if (i % 4 == 0) continue;
+    if (i % 4 == 0) 
+    continue;
     Console.WriteLine(i);
     }
+//Дополнительное задание.Тренировочный план.
+Console.Write("Введите общее количество недель тренировок: ");
+int N = int.Parse(Console.ReadLine());
+bool enough = false;
+int count = 0;
+
+for (int week = 1; week <= N && !enough; week++) {
+    for (int day = 1; day <= 7; ++day){
+        if (day == 7) {
+           continue; 
+        }; count++;
+        if (count == 20){
+            enough = true;
+            Console.WriteLine($"Набрано 20 тренировочных дней. Остановка на неделе '{week}', день '{day}'");
+            break;
+        }
+    }
+}
+
+if (!enough){
+    Console.WriteLine($"За {N} недель не удалось набрать 20 тренировочных дней");
+}
